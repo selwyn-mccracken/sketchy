@@ -62,7 +62,7 @@ def mixed_dot_product(sv, dv):
     plane. The vector should pe provided as a bag of (dimension, value) tuples.
     Only numeric values are supported, so you need to map words, categories etc.
     yourself first. """
-@outputSchema('lsh:long') # TODO make this dynamic based on size
+@outputSchema('lsh:int') # changed signature from long to int - Pig was choking on the cast...
 def sparse_random_projection(sv, size, dim, seed):
     # Create the planes if they don't already exist in this process
     global planes
